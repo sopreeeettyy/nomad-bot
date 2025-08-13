@@ -13,6 +13,12 @@ theme: /
 
     state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
         a: Скажите, пожалуйста, ваши полные ФИО? || htmlEnabled = false, html = "Скажите, пожалуйста, ваши полные ФИО?"
+        InputText: 
+            prompt = ФИО
+            varName = userFullName
+            html = 
+            htmlEnabled = false
+            actions = 
         intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
         event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
 
