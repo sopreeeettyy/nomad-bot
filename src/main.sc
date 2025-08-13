@@ -18,6 +18,7 @@ theme: /
             html = 
             htmlEnabled = false
             actions = 
+            then = /Выбор компании
         intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
         event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
 
