@@ -10,9 +10,7 @@ theme: /
             "Старт" -> /Ввод ФИО
         intent: /Старт || onlyThisState = false, toState = "/Старт"
         intent: /sys/ru/aimylogic/parting || onlyThisState = false, toState = "/Bye"
-        script:
-            $session.correctAnswerCount = 0
-
+        
     state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
         InputText: 
             prompt = Скажите, пожалуйста, ваше полное ФИО?
@@ -70,9 +68,6 @@ theme: /
         a: Правильно! Компания основана в 2001 году. || htmlEnabled = true, html = "Правильно! Компания основана в <b>2001</b> году."
         buttons:
             "Дальше" -> /Второй вопрос
-        script:
-            $session.correctAnswerCount += 1
-        a: Ты ответил правильно на $session.correctAnswers вопросов.
 
     state: Первый вопрос (неверно)
         a: Увы, компания основана в 2001 году. Будь немного внимательнее в следующем вопросе. || htmlEnabled = true, html = "Увы, компания основана в <b>2001</b> году. Будь немного внимательнее в следующем вопросе."
