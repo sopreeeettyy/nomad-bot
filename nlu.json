@@ -94,6 +94,17 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/ФИО",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ФИО"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
