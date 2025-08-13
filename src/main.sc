@@ -12,9 +12,8 @@ theme: /
         intent: /sys/ru/aimylogic/parting || onlyThisState = false, toState = "/Bye"
 
     state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
-        a: Скажите, пожалуйста, ваши полные ФИО? || htmlEnabled = false, html = "Скажите, пожалуйста, ваши полные ФИО?"
         InputText: 
-            prompt = ФИО
+            prompt = Скажите, пожалуйста, ваши полные ФИО?
             varName = userFullName
             html = 
             htmlEnabled = false
