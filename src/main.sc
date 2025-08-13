@@ -10,7 +10,7 @@ theme: /
             "Старт" -> /Ввод ФИО
         intent: /Старт || onlyThisState = false, toState = "/Старт"
         intent: /sys/ru/aimylogic/parting || onlyThisState = false, toState = "/Bye"
-        
+
     state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
         InputText: 
             prompt = Скажите, пожалуйста, ваше полное ФИО?
