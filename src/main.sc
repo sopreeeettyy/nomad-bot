@@ -12,15 +12,23 @@ theme: /
         intent: /sys/ru/aimylogic/parting || onlyThisState = false, toState = "/Bye"
 
     state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
-        InputText: 
-            prompt = Скажите, пожалуйста, ваше полное ФИО?
-            varName = userFullName
-            html = 
-            htmlEnabled = false
-            actions = 
-            then = /ФИО сохранено
-        intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
-        event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
+    InputText:
+        prompt = Скажите, пожалуйста, ваше полное ФИО?
+        varName = userFullName
+        htmlEnabled = false
+        then = /Проверка ФИО
+
+    state: Проверка ФИО
+    script:
+        if (/^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/.test($request.query.trim())) {
+            goto('/ФИО сохранено');
+        } else {
+            goto('/Неправильный ввод');
+        }
+
+    state: Неправильный ввод || sessionResult = "Старт", sessionResultColor = "#7E47D1"
+        a: Пожалуйста, введите полное ФИО на русском языке (три слова: фамилия, имя, отчество).
+        go!: /Ввод ФИО
 
     state: ФИО сохранено
         a: Отлично! А теперь подскажи, в какой компании ты работаешь? Выбери из предложенных вариантов. Если ты пришёл поддержать своего близкого человека, выбирай кнопку «гость». || htmlEnabled = true, html = "<b>Отлично!</b> <br><br>А теперь подскажи, <b>в какой компании ты работаешь?</b> Выбери из предложенных вариантов. Если ты пришёл поддержать своего близкого человека, выбирай кнопку <b>«гость»</b>"
