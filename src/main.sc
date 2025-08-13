@@ -35,14 +35,14 @@ theme: /
             "ФМ" -> /ФМ
             "Гость" -> /Гость
         vars:
-        name: userFullName
-        value: "$request.query"
+            name: userFullName
+            value: "$request.query"
 
     state: Ошибка получения || sessionResult = "Сервер недоступен", sessionResultColor = "#CD4C2B"
         a: К сожалению, я никак не могу связаться с сервером. Попробуйте позже, пожалуйста. || htmlEnabled = false, html = "К сожалению, я никак не могу связаться с сервером. Попробуйте позже, пожалуйста."
         go!: /Меню
 
-   state: Неправильное ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
+    state: Неправильное ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
         a: Это не похоже на полные ФИО. Пожалуйста, введите ФИО полностью. || htmlEnabled = false, html = "Это не похоже на полные ФИО. Пожалуйста, введите ФИО полностью."
         go!: /Ввод ФИО
 
