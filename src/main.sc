@@ -19,16 +19,6 @@ theme: /
             htmlEnabled = false
             actions = 
             then = /ФИО сохранено
-        InputNumber: 
-            prompt = 
-            varName = 
-            html = 
-            htmlEnabled = false
-            failureMessage = [""]
-            failureMessageHtml = [""]
-            minValue = 
-            maxValue = 
-            actions = 
         intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
         event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
 
