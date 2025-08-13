@@ -35,7 +35,6 @@ theme: /
             "ФМ" -> /ФМ
             "Гость" -> /Гость
         go!: /Сохранение ФИО
-        
 
     state: Сохранение ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
         a: Отлично, {{$request.query}}|| htmlEnabled = false
