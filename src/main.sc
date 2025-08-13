@@ -36,7 +36,7 @@ theme: /
             "Гость" -> /Гость
         vars:
             name: userFullName
-            value: "$request.query"
+            value: "$request.query" 
         
 
     state: Ошибка получения || sessionResult = "Сервер недоступен", sessionResultColor = "#CD4C2B"
