@@ -19,13 +19,6 @@ theme: /
             htmlEnabled = false
             actions = 
             then = /ФИО сохранено
-        script:
-            if (/^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/.test($request.query.trim())) {
-                session.userFullName = $request.query.trim();
-                return "/ФИО сохранено";
-            } else {
-                return "/Неправильный ввод";
-            }
         intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
         event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
 
