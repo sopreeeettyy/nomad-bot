@@ -15,8 +15,3 @@ theme: /
         a: Пока-пока!
         EndSession:
             actions = {}
-
-    state: Ввод ФИО || sessionResult = "Старт", sessionResultColor = "#7E47D1"
-         a: Скажите, пожалуйста, ваши полные ФИО? || htmlEnabled = false, html = "Скажите, пожалуйста, ваши полные ФИО?"
-         intent: /ФИО || onlyThisState = false, toState = "/ФИО сохранено"
-        event: noMatch || onlyThisState = false, toState = "/Неправильный ввод"
