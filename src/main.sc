@@ -7,8 +7,7 @@ theme: /
         image: https://allfest.ru/sites/default/files/styles/af_1200x798/public/2023-09/dvizh-fest.jpg?itok=aJKNaHii
         a: Привет! Надеюсь, ты ознакомился с информацией о наших компаниях. Осталось проверить, насколько хорошо ты всё запомнил: отвечай на вопросы и получи наклейку в свой паспорт участника. || htmlEnabled = true, html = "<b>Привет!</b> <br><br>Надеюсь, ты ознакомился с <b>информацией о наших компаниях</b>. Осталось проверить, насколько хорошо ты всё запомнил: <b>отвечай на вопросы и получи наклейку в свой паспорт участника.</b>"
         buttons:
-            "Старт" -> /Старт
-        go!: /Ввод ФИО
+            "Старт" -> /Ввод ФИО
         intent: /Старт || onlyThisState = false, toState = "/Старт"
         intent: /sys/ru/aimylogic/parting || onlyThisState = false, toState = "/Bye"
 
