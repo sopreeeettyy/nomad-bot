@@ -334,6 +334,18 @@ theme: /
             html = 
             htmlEnabled = false
             actions = 
-            then = /Результаты
+            then = /Результат
         script:
-            $session.test++ 
+            $session.test++
+        go!: /Результат
+
+    state: Результат
+        a: Ура! Ты прошёл тест и ответил на все вопросы! Осталось посчитать баллы. Жми кнопку «результат».
+            
+        buttons:
+            "Узнать результат" -> /Узнать результат
+            
+    state: Узнать результат
+        script:
+            $response.replies = $response.replies || []
+            $response.replies.push({ type: "text", text: "Поздравляю! Ты ответил правильно на " + $session.test + " вопросов/вопроса из 17!", tts: "", markup: "plain" });
