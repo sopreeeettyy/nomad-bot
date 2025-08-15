@@ -307,7 +307,7 @@ theme: /
 
     state: Для компаний
         InputText: 
-            prompt = <b>Вопрос 15:</b> <br><br>Что вам больше всего <b>нравится</b> в работе в нашей компании и <b>почему?</b. 
+            prompt = <b>Вопрос 15:</b> <br><br>Что вам больше всего <b>нравится</b> в работе в нашей компании и <b>почему?</b> 
             varName = answer15TextMassage
             html = 
             htmlEnabled = false
