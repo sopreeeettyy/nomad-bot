@@ -37,7 +37,7 @@ theme: /
             "ФМ" -> /Старт теста
         buttons:
             "Гость" -> /Старт теста
-
+    
     state: Старт теста
         a: Отлично! Дело за малым: жми кнопку «Готов», пройди тест и проверь себя. Удачи! || htmlEnabled = true, html = "<b>Отлично!</b> <br><br>Дело за малым: <b>жми кнопку «Готов»</b>, пройди тест и проверь себя. <br><br><b>Удачи!</b>"
         buttons:
@@ -337,14 +337,23 @@ theme: /
             then = /Результат
         script:
             $session.test++
-        go!: /Результат
 
     state: Результат
         a: Ура! Ты прошёл тест и ответил на все вопросы! Осталось посчитать баллы. Жми кнопку «результат». || htmlEnabled = true, html = "<b>Ура!</b>. <br><br>Ты прошёл тест и ответил на все вопросы! <br><br>Осталось посчитать баллы. <br><br><b>Жми кнопку «результат».</b>"
         buttons:
-            "Узнать результат" -> /Узнать результат
+            "Узнать результат" -> /Сохранение в таблицу
+            
+    state: Сохранение в таблицу
+        GoogleSheets:
+            operationType = writeDataToLine
+            integrationId = 702dad81-cf3d-45fb-a0ed-2087cd61272e
+            spreadsheetId = 1TQ9sb-97-CC6RSDZIL_PMdmIs5raBYkYaZ5HKyP3qJ4
+            sheetName = test
+            body = {"values": ["{{$session.userFullName}}", "{{$session.test}}"]}
+            okState = /Узнать результат
 
     state: Узнать результат
         script:
             $response.replies = $response.replies || []
             $response.replies.push({ type: "text", text: "Поздравляю! Ты ответил правильно на " + $session.test + " вопросов/вопроса из 17!", tts: "", markup: "plain" });
+            
