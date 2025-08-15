@@ -355,5 +355,4 @@ theme: /
     state: Узнать результат
         script:
             $response.replies = $response.replies || []
-            $response.replies.push({ type: "text", text: "Поздравляю! Ты ответил правильно на " + $session.test + " вопросов/вопроса из 17!", tts: "", markup: "plain" });
-            
+            $response.replies.push({type:"text",text:"Поздравляю! Ты ответил правильно на "+$session.test+" "+($session.test%10===1&&$session.test%100!==11?"вопрос":($session.test%10>=2&&$session.test%10<=4&&($session.test%100<12||$session.test%100>14)?"вопроса":"вопросов"))+" из 17!",tts:"",markup:"plain"});
