@@ -313,8 +313,6 @@ theme: /
             htmlEnabled = false
             then = /Шестанд
             actions = 
-        script:
-            $session.test++    
 
     state: Шестанд
         InputText: 
@@ -324,8 +322,6 @@ theme: /
             htmlEnabled = false
             actions = 
             then = /Семнад
-        script:
-            $session.test++ 
 
     state: Семнад
         InputText: 
@@ -335,8 +331,6 @@ theme: /
             htmlEnabled = false
             actions = 
             then = /Результат
-        script:
-            $session.test++
 
     state: Результат
         a: Ура! Ты прошёл тест и ответил на все вопросы! Осталось посчитать баллы. Жми кнопку «результат». || htmlEnabled = true, html = "<b>Ура!</b>. <br><br>Ты прошёл тест и ответил на все вопросы! <br><br>Осталось посчитать баллы. <br><br><b>Жми кнопку «результат».</b>"
